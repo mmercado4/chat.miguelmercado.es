@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "mrrobotregular";
+  src: url("/fonts/mrrobot.eot");
+  src: url("/fonts/mrrobot.eot") format("embedded-opentype"),
+    url("/fonts/mrrobot.woff2") format("woff2"),
+    url("/fonts/mrrobot.woff") format("woff"),
+    url("/fonts/mrrobot.ttf") format("ttf"),
+    url("/fonts/mrrobot.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,5 +18,12 @@
 
 body {
   height: 100vh;
-  background-color: tomato;
+  background-color: black;
+}
+
+h1 {
+  font-family: "mrrobotregular";
+  font-size: 7em;
+  font-synthesis: none;
+  color: red;
 }

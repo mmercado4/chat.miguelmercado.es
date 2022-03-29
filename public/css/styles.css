@@ -1,3 +1,4 @@
+/*fonts*/
 @font-face {
   font-family: "mrrobotregular";
   src: url("/fonts/mrrobot.eot");
@@ -22,6 +23,14 @@
   font-style: normal;
 }
 
+/*constants*/
+:root {
+  --primary-font: "mrrobotregular";
+  --secondary-font: "fsex300";
+  --dark-color: #202020;
+  --title-color: #d32026;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,17 +39,40 @@
 
 body {
   height: 100vh;
-  background-color: black;
+  background-color: #202020;
+  position: relative;
+  overflow: hidden;
 }
 
 h1 {
-  font-family: "mrrobotregular";
+  font-family: var(--primary-font);
   font-size: 7em;
   font-synthesis: none;
-  color: red;
+  color: var(--title-color);
 }
 
 p {
   font-family: "fsex300";
+  color: white;
+}
+
+/*terminal*/
+
+#terminal {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 500px;
+  left: 500px;
+  background-color: black;
+  border: 2px solid white;
+  transition: all 0.5s ease;
+  padding: 5px 2px;
+}
+
+#command-line {
+  border: 2px solid white;
+  font-family: var(--secondary-font);
+  background-color: black;
   color: white;
 }

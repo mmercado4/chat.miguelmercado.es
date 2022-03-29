@@ -10,6 +10,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "fsex300";
+  src: url("/fonts/fsex300.eot");
+  src: url("/fonts/fsex300.eot") format("embedded-opentype"),
+    url("/fonts/fsex300.woff2") format("woff2"),
+    url("/fonts/fsex300.woff") format("woff"),
+    url("/fonts/fsex300.ttf") format("ttf"),
+    url("/fonts/fsex300.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -26,4 +38,9 @@ h1 {
   font-size: 7em;
   font-synthesis: none;
   color: red;
+}
+
+p {
+  font-family: "fsex300";
+  color: white;
 }

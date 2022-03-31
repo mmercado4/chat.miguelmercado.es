@@ -56,6 +56,35 @@ p {
   color: white;
 }
 
+/*terminal-icon*/
+#terminal-icon {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+}
+
+#terminal-icon div {
+  padding: 5px;
+  width: 50px;
+  height: 40px;
+  background-color: black;
+  border: 2px solid white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+#terminal-icon div i {
+  color: white;
+}
+
+#terminal-icon p {
+  color: white;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+
 /*terminal*/
 
 #terminal {

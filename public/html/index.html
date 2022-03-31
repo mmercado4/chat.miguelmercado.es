@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terminal</title>
+    <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -12,8 +13,14 @@
     <p>fsociety</p>
 
     <div id="terminal">
-      <p>eterm##5: locate server WSIDLAPIDTEKDA12DASFA45465</p>
-      <input id="command-line" type="text" />
+      <div id="terminal-bar">
+        <p>Terminal - root@fsociety:~</p>
+      </div>
+      <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
+      <div id="commands-wrapper">
+        <p>eterm##5: locate server WSIDLAPIDTEKDA12DASFA45465</p>
+        <input id="command-line" type="text" />
+      </div>
     </div>
     <script src="js/socket.io.js"></script>
     <script src="js/index.js"></script>

@@ -28,6 +28,11 @@ app.use(
   express.static(__dirname + "/node_modules/socket.io/client-dist")
 );
 
+app.use(
+  "/",
+  express.static(__dirname + "/node_modules/@fortawesome/fontawesome-free/")
+);
+
 //TAKE NOTE: Server has to listen, not app.
 server.listen(1111, () => {
   console.log("Server is running at port 1111");

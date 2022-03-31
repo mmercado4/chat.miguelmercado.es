@@ -59,15 +59,42 @@ p {
 /*terminal*/
 
 #terminal {
-  width: 500px;
-  height: 300px;
+  width: 700px;
+  height: 400px;
   position: absolute;
   top: 500px;
   left: 500px;
   background-color: black;
-  border: 2px solid white;
+  border: 2px solid #6a847b;
   transition: all 0.01s ease;
-  padding: 5px 2px;
+}
+
+#terminal #terminal-bar {
+  width: 100%;
+  position: relative;
+  padding: 5px;
+  background: linear-gradient(
+    180deg,
+    rgba(106, 132, 123, 1) 0%,
+    rgba(0, 0, 0, 1) 30%
+  );
+}
+
+#terminal #terminal-bar p {
+  text-align: center;
+  cursor: default;
+}
+
+#terminal .close-btn {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+#commands-wrapper {
+  padding: 0 2px;
 }
 
 #command-line {

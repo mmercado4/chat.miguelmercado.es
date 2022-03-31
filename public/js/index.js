@@ -1,12 +1,13 @@
 const socket = io();
 const terminal = document.querySelector("#terminal");
+const bar = document.querySelector("#terminal-bar");
 
 let mouseDown = false;
 let mouseX = 0;
 let mouseY = 0;
 //Ponerlo en un archivo separado y poner solo en la barra superior de la terminal
 
-terminal.addEventListener(
+bar.addEventListener(
   "mousedown",
   (e) => {
     e.preventDefault();
@@ -17,11 +18,10 @@ terminal.addEventListener(
   false
 );
 
-terminal.addEventListener(
+bar.addEventListener(
   "mouseup",
   () => {
     mouseDown = false;
-    console.log(terminal.getBoundingClientRect());
     let { x, y } = terminal.getBoundingClientRect();
     terminal.style.left = `${x}px`;
     terminal.style.top = `${y}px`;
@@ -30,7 +30,7 @@ terminal.addEventListener(
   false
 );
 
-terminal.addEventListener("mousemove", (e) => {
+bar.addEventListener("mousemove", (e) => {
   e.preventDefault();
   if (!mouseDown) return;
   let deltaX = e.clientX - mouseX;

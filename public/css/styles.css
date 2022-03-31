@@ -88,11 +88,12 @@ p {
 /*terminal*/
 
 #terminal {
-  width: 700px;
-  height: 400px;
+  width: 600px;
+  height: 300px;
+  opacity: 0;
+  top: 30%;
+  left: 30%;
   position: absolute;
-  top: 500px;
-  left: 500px;
   background-color: black;
   border: 2px solid #6a847b;
   transition: all 0.01s ease;
@@ -124,6 +125,8 @@ p {
 
 #commands-wrapper {
   padding: 0 2px;
+  /* overflow: scroll; */
+  height: -webkit-fill-available;
 }
 
 #command-line {
@@ -131,4 +134,32 @@ p {
   font-family: var(--secondary-font);
   background-color: black;
   color: white;
+}
+
+/*footer*/
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
+footer p {
+  text-align: end;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/*animations*/
+
+.open-terminal {
+  animation: open-terminal 0.05s linear forwards;
+}
+
+@keyframes open-terminal {
+  100% {
+    opacity: 1;
+  }
 }

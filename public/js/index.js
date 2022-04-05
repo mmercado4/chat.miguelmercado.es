@@ -1,7 +1,7 @@
 import { dragTerminal } from "./dragTerminal.js";
 import { openTerminal } from "./openTerminal.js";
 
-const socket = io();
+//const socket = io();
 
 dragTerminal();
 

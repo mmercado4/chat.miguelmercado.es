@@ -1,3 +1,5 @@
+import { initTerminal } from "./initTerminal.js";
+
 export const openTerminal = () => {
   //open close terminal
   const terminalIcon = document.querySelector("#terminal-icon");
@@ -7,6 +9,7 @@ export const openTerminal = () => {
   terminalIcon.addEventListener("dblclick", () => {
     if (!terminal.classList.contains("open-terminal")) {
       terminal.classList.add("open-terminal");
+      initTerminal();
     }
   });
 

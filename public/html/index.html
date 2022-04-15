@@ -30,14 +30,17 @@
     </div>
     <div id="terminal">
       <div id="terminal-bar">
-        <p class="bar-id">Terminal - root@fsociety:~</p>
+        <!-- <p class="bar-id">Terminal - </p> -->
+        <p class="bar-id">Terminal</p>
       </div>
       <div class="close-btn">
         <i class="fa-solid fa-xmark"></i>
       </div>
       <div id="commands-wrapper">
-        <p>eterm##5: locate server WSIDLAPIDTEKDA12DASFA45465</p>
-        <input id="command-line" type="text" />
+        <div class="command-line invisible">
+          <label for="command-input">root@: </label>
+          <input name="command-input" type="text" />
+        </div>
       </div>
     </div>
     <footer>

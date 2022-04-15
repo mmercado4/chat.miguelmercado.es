@@ -141,11 +141,23 @@ h1 {
   height: -webkit-fill-available;
 }
 
-#command-line {
-  border: 2px solid white;
+.command-line {
   font-family: var(--secondary-font);
-  background-color: black;
   color: white;
+}
+
+.command-line input {
+  background-color: black;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  font-family: var(--secondary-font);
+  color: white;
+  width: 50%;
+}
+
+.invisible {
+  opacity: 0;
 }
 
 /*footer*/

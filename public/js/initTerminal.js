@@ -16,8 +16,6 @@ const createNewLine = (text, printUser = true) => {
 };
 
 const updateLine = (text, printUser = false) => {
-  // console.log(commandsZone);
-  // console.log(commandsZone.childNodes[commandsZone.childNodes.length - 3]);
   let lastLine = commandsZone.childNodes[commandsZone.childNodes.length - 3];
   if (printUser) lastLine.textContent = `${user}@${location}: ${text}`;
   else lastLine.textContent = text;

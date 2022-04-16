@@ -16,6 +16,12 @@ export const openTerminal = () => {
   closeButton.addEventListener("click", () => {
     if (terminal.classList.contains("open-terminal")) {
       terminal.classList.remove("open-terminal");
+      const commandsZone = document.querySelector("#commands-wrapper");
+      // commandsZone.innerHTML = `
+      //   <div class="command-line invisible">
+      //     <label for="command-input">root@: </label>
+      //     <input name="command-input" type="text" />
+      //   </div>`;
     }
   });
 };

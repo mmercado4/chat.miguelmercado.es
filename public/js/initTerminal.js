@@ -6,6 +6,22 @@ const barId = document.querySelector(".bar-id");
 let user = "root";
 let location = "";
 let steps = 0;
+const socket = io();
+
+socket.on("printMessage", (message, nickname) => {
+  if (steps > 2) {
+    createNewLine(
+      `${new Date().toLocaleTimeString()} @${nickname}: ${message}`,
+      false
+    );
+    commandLine.classList.remove("invisible");
+  }
+  updateScroll();
+});
+
+const sendMessage = (message, user) => {
+  socket.emit("addNewMessage", message, user);
+};
 
 const createNewLine = (text, printUser = true) => {
   let newLine = document.createElement("p");
@@ -21,16 +37,26 @@ const updateLine = (text, printUser = false) => {
   else lastLine.textContent = text;
 };
 
+const updateScroll = () => {
+  let lastP = document.querySelector("#commands-wrapper p:last-child");
+  commandLine.scrollIntoView();
+};
+
 const handleTerminal = (e) => {
   if (e.code === "Enter") {
     let text = e.target.value;
+    let message;
     if (/user/.test(text)) {
       user = text.replace(/user /, "").trim();
       commandLabel.textContent = `${user}@${location}: `;
       text = "user";
     }
 
-    createNewLine(text);
+    if (steps > 2) {
+      text = "message";
+      message = e.target.value;
+    } else createNewLine(text);
+
     commandLine.classList.add("invisible");
     switch (text) {
       case "fsociety init":
@@ -40,16 +66,43 @@ const handleTerminal = (e) => {
             updateLine("connecting to E-Corp", false);
             setTimeout(() => {
               updateLine("E-corp connected", false);
-              createNewLine("---------------", false);
-              createNewLine(" ////////", false);
-              createNewLine(" //", false);
-              createNewLine(" //", false);
-              createNewLine(" //////", false);
-              createNewLine(" //", false);
-              createNewLine(" //", false);
-              createNewLine(" ////////", false);
-              createNewLine("---------------", false);
-              createNewLine("welcome to E-Corp", false);
+              createNewLine(
+                "-------------------------------------------------",
+                false
+              );
+              createNewLine(
+                " ////////.........................................",
+                false
+              );
+              createNewLine(
+                " //...............................................",
+                false
+              );
+              createNewLine(
+                " //...............................................",
+                false
+              );
+              createNewLine(
+                " //////.......//////...///////...///////...///////",
+                false
+              );
+              createNewLine(
+                " //...........//.......//...//...//...//...//...//",
+                false
+              );
+              createNewLine(
+                " //...........//.......//...//.../////.....///////",
+                false
+              );
+              createNewLine(
+                " ////////.....//////...///////...//..//....//.....",
+                false
+              );
+              createNewLine(
+                "-------------------------------------------------",
+                false
+              );
+              createNewLine("welcome to E-Corp Systems", false);
               location = "e_corp";
               barId.textContent = `Terminal ${user}@${location}:~`;
               commandLabel.textContent = `${user}@${location}: `;
@@ -81,8 +134,12 @@ const handleTerminal = (e) => {
         }
         break;
       case "user":
-        createNewLine(`your user is ${user}`, false);
+        createNewLine(`${user} is connected`, false);
+        steps++;
         commandLine.classList.remove("invisible");
+        break;
+      case "message":
+        sendMessage(message, user);
         break;
       case "help":
         switch (steps) {
@@ -98,8 +155,11 @@ const handleTerminal = (e) => {
           case 2:
             createNewLine("set your nickmane typing 'user yournickname'");
             break;
+          case 3:
+            createNewLine("just write your messages!");
+            break;
           default:
-            createNewLine("Ecorp help", false);
+            createNewLine("Ecorp help system", false);
         }
         commandLine.classList.remove("invisible");
         break;

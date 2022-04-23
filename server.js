@@ -14,7 +14,10 @@ app.use(express.urlencoded({ extended: true })); //Metemos el bodyparser.
 io.on("connection", (socket) => {
   console.log("user connected");
 
-  socket.on("addNewMessage", (message) => {});
+  socket.on("addNewMessage", (message, user) => {
+    io.emit("printMessage", message, user);
+  });
+
   socket.on("disconnect", () => {
     console.log("user disconnected");
   });

@@ -39,7 +39,11 @@
 
 body {
   height: 100vh;
-  background-color: #202020;
+  background-image: url(../img/kali.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
   position: relative;
   overflow: hidden;
 }
@@ -109,12 +113,14 @@ h1 {
   background-color: black;
   border: 2px solid #6a847b;
   transition: all 0.01s ease;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 #terminal #terminal-bar {
   width: 100%;
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
   padding: 5px;
   background: linear-gradient(
     180deg,
@@ -138,7 +144,6 @@ h1 {
 
 #commands-wrapper {
   padding: 0 2px;
-  overflow: scroll;
   height: -webkit-fill-available;
 }
 
@@ -175,6 +180,19 @@ footer p {
   text-align: end;
   font-size: 1.1em;
   color: rgba(255, 255, 255, 0.4);
+}
+
+/*scrollbar*/
+#terminal::-webkit-scrollbar {
+  width: 5px;
+}
+
+#terminal::-webkit-scrollbar-track {
+  background: rgba(106, 132, 123, 0.8);
+}
+
+#terminal::-webkit-scrollbar-thumb {
+  background: rgba(106, 132, 123, 1);
 }
 
 /*animations*/

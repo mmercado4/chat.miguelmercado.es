@@ -37,6 +37,6 @@ app.use(
 );
 
 //TAKE NOTE: Server has to listen, not app.
-server.listen(1111, () => {
-  console.log("Server is running at port 1111");
+server.listen(3000, () => {
+  console.log("Server running at port 3000");
 });

@@ -1,10 +1,11 @@
 {
   "name": "chat.miguelmercado.es",
   "version": "1.0.0",
-  "description": "instant chat",
+  "description": "instant chat inspired in Mr Robot",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "miguel mercado",
   "license": "ISC",
